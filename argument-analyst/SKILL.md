@@ -9,7 +9,10 @@ description: >
   presents any text (essay, article, debate transcript, op-ed, social media post, academic paper,
   policy proposal) and asks for logical evaluation. Also trigger when the user submits a passage
   and asks "is this valid," "is this sound," "does this follow," "what are the assumptions here,"
-  or "what's the weakest point." Trigger proactively when reviewing any argumentative text,
+  or "what's the weakest point." Also trigger for unstated-premise work: "what is this
+  argument assuming," "what's the hidden premise," "resolve this enthymeme," "what does
+  the speaker take for granted," "fill in the missing premise."
+  Trigger proactively when reviewing any argumentative text,
   even if the user says only "review this" or "what do you think of this" and the text contains
   claims supported by reasons.
 ---
@@ -96,15 +99,90 @@ N. Therefore, [Conclusion] (from 1, 2, ...)
   use X as a premise in the next step.
 - Note which premises support which conclusions (from 1-2, from 3, independently).
 
-**Supply missing premises** using the principle of charity: add the most plausible statement
-needed to make the argument valid (for deductive arguments) or inductively strong (for
-inductive arguments). Mark supplied premises explicitly as [IMPLICIT]. Two constraints:
-(a) the implicit premise must be needed for the argument to work, and (b) it must be
-something the arguer would plausibly believe.
+#### Supply missing premises (enthymeme resolution)
 
-**Watch for the is-ought gap.** If the conclusion is normative (contains "should," "ought,"
-"good," "bad," "right," "wrong") but all explicit premises are descriptive, there is a
-missing normative premise. Make it explicit.
+Most real arguments are enthymemes: they omit a premise because the audience is expected
+to supply it. The omitted premise is therefore not concealed in the text -- it is held by
+the addressee. Recovering it is an act of interpretation, not of syntax checking. The
+procedure below does not manufacture that judgment; it makes the place where judgment was
+exercised auditable.
+
+**Step 1 -- Detect the gap.** Signals that a premise is missing:
+
+- A term appears in the conclusion that appears in no premise (missing middle term).
+- The conclusion is normative ("should," "ought," "right," "wrong," "better") but all
+  stated premises are descriptive. This is the is-ought gap.
+- The conclusion is causal but the premises are correlational or merely sequential.
+- The conclusion is comparative or evaluative but the premises are factual.
+- The conclusion is modal (necessary, impossible, must) but the premises concern only
+  what is actual.
+- The conclusion is about a particular but the premises are all general, or vice versa,
+  with no bridging instantiation.
+
+**Step 2 -- Identify the addressee.** In one line, name the discourse community for whom
+this argument would read as complete as written. This is not decoration: it is the only
+thing that licenses a CONVENTIONAL tag in Step 4. If the addressee cannot be determined,
+say so and use degraded mode below.
+
+**Step 3 -- Generate candidates, not a completion.** Produce two to four propositions that
+would close the gap, spanning this range:
+
+- **Weakest sufficient** -- the least the arguer must be committed to for the inference to hold.
+- **Most likely held** -- what *this* arguer, addressing *this* audience, probably believes.
+- **Strongest defensible** -- the most charitable version, listed only if it differs from the above.
+
+*Prohibited candidate:* the bare material conditional "if [stated premises] then [conclusion]."
+It restores validity in every case and carries no content, so it cannot discriminate between
+readings. If the bare conditional is the only available completion, the passage is not an
+enthymeme -- it is an assertion with a decorative "therefore." Report it as such.
+
+The spread between "weakest sufficient" and "most likely held" is itself a finding: a wide
+spread means the arguer is claiming more than the argument requires, and the surplus is
+usually where the real disagreement lives.
+
+**Step 4 -- Tag provenance.** Every supplied premise carries exactly one tag. Never leave
+one untagged.
+
+- `[IMPLICIT-TEXTUAL]` -- the arguer asserts or presupposes this elsewhere in the passage.
+  Cite where. This is the strongest attribution.
+- `[IMPLICIT-CONVENTIONAL: <audience>]` -- unstated because it is common ground for the
+  audience named in Step 2. Name that audience inside the tag. This is an empirical claim
+  about a community and can be wrong.
+- `[IMPLICIT-ANALYST]` -- supplied by the analyst. The arguer might reject it. Treat it as
+  a hypothesis about the arguer, not a finding about the text.
+
+Evaluate the argument against the *most likely held* completion. Then state in one sentence
+whether the verdict changes under the other candidates. If it does, that sensitivity is the
+headline finding, not a footnote.
+
+**Step 5 -- Apply the charity ceiling.** Stop repairing when any of these holds:
+
+- (a) The supplied premise is more contestable than the conclusion it supports.
+- (b) The arguer visibly rejects it elsewhere, or it contradicts their stated commitments.
+- (c) It is tagged ANALYST *and* it is doing all the inferential work.
+
+In these cases do not present a repaired argument. Present the gap: "As stated this does not
+follow. It works only if the arguer holds X -- a claim larger than the conclusion it is being
+used to support." Repairing past the ceiling produces an analysis of the analyst's own argument
+wearing the arguer's name, which is a worse error than declaring the argument incomplete.
+
+**Cross-check.** Before accepting a completion, scan the rest of the text for the same premise
+doing work in other arguments. Recurrence upgrades ANALYST to TEXTUAL. Conspicuous absence --
+a place where the arguer needed that premise and reasoned differently instead -- is evidence
+against the candidate.
+
+**Degraded mode (no identifiable addressee).** For anonymous, fragmentary, translated, or
+otherwise decontextualized text, the CONVENTIONAL tag is unavailable: there is no community
+to anchor it to. Restrict to TEXTUAL, or use ANALYST with an explicit warning that the
+completion is the analyst's construction. Do **not** fall back on a generic "reasonable person"
+or "any sensible reader" -- that imports the analyst's own common ground under a neutral-sounding
+label, which is precisely the failure the tags exist to prevent.
+
+**The is-ought gap** is one instance of Step 1, not a separate rule. When the conclusion is
+normative and the premises are descriptive, the missing normative premise runs through Steps
+3-5 like any other. It is usually CONVENTIONAL, and in practice it is usually where the actual
+disagreement sits -- an argument that looks like a dispute about facts is often a dispute about
+the unstated ought.
 
 ### Phase 3: Validity and Soundness Assessment
 
@@ -292,6 +370,14 @@ Synthesize findings into a final assessment:
    - **Weak**: Significant logical flaws, unsupported premises, or fallacies that undermine
      the conclusion.
    - **Fallacious**: One or more clear fallacies render the argument unreliable.
+   - **Incomplete as stated**: The charity ceiling (Phase 2, Step 5) was reached. The
+     reasoning may be fine, but the text does not supply enough to judge it. This is
+     distinct from **Weak**: nothing has been shown to be wrong, only that the argument
+     cannot be assessed without a premise the arguer did not give.
+
+   State which grade depends on which supplied premise. An argument whose validity rests on
+   an `[IMPLICIT-ANALYST]` premise may not be graded **Sound/Cogent** or **Formally valid
+   but unsound** without naming that dependence in the same sentence.
 6. **Repair suggestions**: how the argument could be fixed -- what premises need evidence,
    what structural changes would make it valid, what fallacies need to be excised.
 

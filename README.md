@@ -13,17 +13,18 @@ Systematic six-phase analysis of any argumentative text.
 **What it does:**
 
 1. **Argument detection** — identifies which parts of a text are arguments (reasons given for a conclusion) vs. explanations, descriptions, or bare assertions.
-2. **Reconstruction in standard form** — extracts premises and conclusions, numbers them, marks their logical relationships, and supplies missing (implicit) premises using the principle of charity. Flags the is-ought gap when normative conclusions rest on purely descriptive premises.
+2. **Reconstruction in standard form** — extracts premises and conclusions, numbers them, marks their logical relationships, and resolves enthymemes (arguments with an unstated premise) through a five-step procedure: detect the gap, identify the addressee, generate competing candidate premises rather than one, tag each supplied premise by provenance (`TEXTUAL` / `CONVENTIONAL` / `ANALYST`), and stop at the charity ceiling rather than repairing an argument into one the arguer never made. The is-ought gap is handled as one case of this procedure.
 3. **Validity and soundness assessment** — applies the informal test of validity (can you imagine a scenario where the premises are true and the conclusion false?) for deductive arguments; assesses inductive strength for statistical generalizations, analogies, causal claims, and inferences to the best explanation.
 4. **Fallacy detection** — scans for 24+ named fallacies organized in four families.
 5. **Explanation quality** — evaluates inference-to-best-explanation arguments against seven explanatory virtues (explanatoriness, depth, power, falsifiability, modesty, simplicity, conservativeness).
-6. **Verdict** — overall assessment on a five-point scale from Sound/Cogent to Fallacious, with repair suggestions.
+6. **Verdict** — overall assessment on a six-point scale from Sound/Cogent to Fallacious, plus *Incomplete as stated* for arguments that cannot be judged without a premise the text never supplies. Includes repair suggestions and a rule requiring the verdict to name which grade depends on which supplied premise.
 
 **Example prompts:**
 
 - "Analyze the argument in this op-ed."
 - "Put this argument in standard form and tell me if it's valid."
 - "What are the hidden assumptions in this policy proposal?"
+- "This is an enthymeme — what premise is the speaker expecting me to supply?"
 - "Steelman this, then find its weakest point."
 - "Is this a good argument? Be specific about what works and what doesn't."
 
