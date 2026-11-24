@@ -4,6 +4,8 @@ Three skills for Claude that bring formal and informal logic into your workflow.
 
 Each skill is a self-contained `SKILL.md` file — no scripts, no dependencies, no external references. Claude reads the file and gains the relevant analytical capability.
 
+<img width="1200" height="673" alt="reasoning" src="https://github.com/user-attachments/assets/ff3a8603-a9a0-4d7d-999f-073ac276f080" />
+
 ## The three skills
 
 ### argument-analyst
