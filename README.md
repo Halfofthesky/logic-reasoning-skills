@@ -1,4 +1,4 @@
-# Logic & Reasoning Skills
+# Logic & Reasoning: Argument Analysis Made Easy
 
 Three skills for Claude that bring formal and informal logic into your workflow. Built by synthesizing four open-access logic textbooks into operational instructions Claude can follow.
 
