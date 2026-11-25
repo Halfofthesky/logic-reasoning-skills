@@ -170,6 +170,13 @@ These skills synthesize methods from four open-access logic textbooks. No prose 
   [https://open.umn.edu/opentextbooks/textbooks/a-concise-introduction-to-logic](https://open.umn.edu/opentextbooks/textbooks/a-concise-introduction-to-logic)
   Contributions: propositional and first-order logic proof systems, conditional derivation and reductio ad absurdum methods, quantifier rules (universal instantiation, existential generalization, existential instantiation, universal derivation).
 
+## See also
+
+- [BEAM](https://github.com/Halfofthesky/beam): maps what each source does in your text.
+- [Concept Check](https://github.com/Halfofthesky/concept-check): tests whether a concept earns its place.
+- [Evidence Tests](https://github.com/Halfofthesky/evidence-tests): weighs the evidence for causal claims against rival explanations.
+- [Adversarial Editorial Review](https://github.com/Halfofthesky/adversarial-editorial-review): three reviewers and an editorial synthesis for humanities manuscripts.
+
 ## License
 
 This work is licensed under [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/).
