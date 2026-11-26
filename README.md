@@ -176,6 +176,7 @@ These skills synthesize methods from four open-access logic textbooks. No prose 
 - [Concept Check](https://github.com/Halfofthesky/concept-check): tests whether a concept earns its place.
 - [Evidence Tests](https://github.com/Halfofthesky/evidence-tests): weighs the evidence for causal claims against rival explanations.
 - [Stasis](https://github.com/Halfofthesky/stasis): finds where a disagreement sits and whether the text meets it there.
+- [CARS](https://github.com/Halfofthesky/cars): checks that an introduction says what the field is missing and that the work supplies it.
 - [Adversarial Editorial Review](https://github.com/Halfofthesky/adversarial-editorial-review): three reviewers and an editorial synthesis for humanities manuscripts.
 
 ## License
